@@ -1,12 +1,23 @@
 package com.groupOne.model;
-
+/**
+ * This class created to support UI (in specific: table component) by creating additional model for result
+ *
+ * @author COSC2658: Data Strucure - Group 1
+ * Dong Nguyen: s3634096
+ * Duc Ho:      s
+ * Thuan Trang: s
+ * Danh Le:     s
+ *
+ */
 public class Result {
+    // Create attributes for result model
     int stepNumber;
     String guessNumber;
     int strikeNumber;
     int hitNumber;
     int missNumber;
 
+    // Getter and Setter result model
     public Result(int stepNumber, String guessNumber, int strikeNumber, int hitNumber, int missNumber) {
         this.stepNumber = stepNumber;
         this.guessNumber = guessNumber;
@@ -15,7 +26,7 @@ public class Result {
         this.missNumber = missNumber;
     }
 
-
+    // Getter and Setter of each attributes of result model
     public int getStepNumber() {
         return stepNumber;
     }

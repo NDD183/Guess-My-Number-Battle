@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -29,13 +30,13 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <TextField fx:id="firstgField" editable="false" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="106.0" />
-                              <Button fx:id="guessBtn" layoutX="122.0" layoutY="14.0" mnemonicParsing="false" onAction="#generatefgClicked" prefHeight="25.0" prefWidth="161.0" text="Generate First Guess" />
+                              <Button fx:id="guessBtn" layoutX="122.0" layoutY="14.0" mnemonicParsing="false" onAction="#generatefgClicked" prefHeight="25.0" prefWidth="161.0" text="Get First Guess" />
                               <Label layoutX="95.0" layoutY="46.0" prefHeight="20.0" prefWidth="124.0" text="How is my guess?">
                                  <font>
                                     <Font name="System Bold Italic" size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="95.0" layoutY="99.0" prefHeight="20.0" prefWidth="124.0" text="My next guess is:">
+                              <Label layoutX="168.0" layoutY="96.0" prefHeight="20.0" prefWidth="103.0" text="My next guess " textAlignment="CENTER">
                                  <font>
                                     <Font name="System Bold Italic" size="14.0" />
                                  </font>
@@ -74,7 +75,13 @@
                                     <Insets top="5.0" />
                                  </padding>
                               </HBox>
-                              <Button fx:id="nextGuessBtn" layoutX="21.0" layoutY="119.0" mnemonicParsing="false" onAction="#generatengClicked" prefHeight="25.0" prefWidth="261.0" text="Get Next Guess" />
+                              <Button fx:id="nextGuessBtn" layoutX="149.0" layoutY="119.0" mnemonicParsing="false" onAction="#generatengClicked" prefHeight="25.0" prefWidth="133.0" text="Get Next Guess" />
+                              <Label layoutX="26.0" layoutY="96.0" prefHeight="20.0" prefWidth="103.0" text="Correct Percent" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="percentField" layoutX="21.0" layoutY="119.0" prefHeight="25.0" prefWidth="113.0" />
                            </children></AnchorPane>
                     </content>
                      <font>
@@ -85,8 +92,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="snumberField" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="106.0" />
-                              <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateClicked" prefHeight="25.0" prefWidth="161.0" text="Generate Secret Number" />
+                              <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateClicked" prefHeight="25.0" prefWidth="161.0" text="Get Secret Number" />
                               <Label layoutX="14.0" layoutY="65.0" prefWidth="106.0" text="Rival guess :">
                                  <font>
                                     <Font name="System Bold Italic" size="14.0" />
@@ -94,6 +100,7 @@
                               </Label>
                               <TextField fx:id="gnumberField" layoutX="120.0" layoutY="61.0" prefWidth="161.0" />
                               <Button fx:id="resBtn" layoutX="13.0" layoutY="108.0" mnemonicParsing="false" onAction="#resultClicked" prefHeight="25.0" prefWidth="267.0" text="Get Result" />
+                              <PasswordField fx:id="snumberField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="105.0" />
                            </children>
                         </AnchorPane>
                     </content>
