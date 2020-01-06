@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -92,7 +94,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="120.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateClicked" prefHeight="25.0" prefWidth="161.0" text="Get Secret Number" />
+                              <Button layoutX="149.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateClicked" prefHeight="25.0" prefWidth="132.0" text="Get Secret Number" />
                               <Label layoutX="14.0" layoutY="65.0" prefWidth="106.0" text="Rival guess :">
                                  <font>
                                     <Font name="System Bold Italic" size="14.0" />
@@ -100,7 +102,12 @@
                               </Label>
                               <TextField fx:id="gnumberField" layoutX="120.0" layoutY="61.0" prefWidth="161.0" />
                               <Button fx:id="resBtn" layoutX="13.0" layoutY="108.0" mnemonicParsing="false" onAction="#resultClicked" prefHeight="25.0" prefWidth="267.0" text="Get Result" />
-                              <PasswordField fx:id="snumberField" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="105.0" />
+                              <PasswordField fx:id="snumberField" layoutX="67.0" layoutY="14.0" prefHeight="25.0" prefWidth="80.0" />
+                              <ImageView fx:id="snumberImage" fitHeight="44.0" fitWidth="36.0" layoutX="21.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                     </content>

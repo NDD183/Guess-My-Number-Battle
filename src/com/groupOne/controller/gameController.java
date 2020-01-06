@@ -1,4 +1,5 @@
 package com.groupOne.controller;
+import com.groupOne.StartApplication;
 import com.groupOne.model.Result;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,6 +9,12 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -56,9 +63,13 @@ public class gameController implements Initializable {
     Button nextGuessBtn;
     @FXML
     Button resBtn;
+    @FXML
+    ImageView snumberImage;
 
     // Initialize all required global variables
-    private String snumber, gnumber, firstGuess, nextGuess, percent ;
+    private StartApplication startApplication = new StartApplication();
+    private Image showImage, hideImage;
+    private String snumber, gnumber, firstGuess, nextGuess, percent, tempSecret;
     private int stepsNumber = 0;
     private  List<Integer> snumberList = new ArrayList<>();
     private  List<Integer> infoList = new ArrayList<>();
@@ -100,6 +111,23 @@ public class gameController implements Initializable {
         gnumberField.setPromptText("Enter a number with 4 digits");
         resultTable.setPlaceholder(new Label("Make a guess to gain result"));
 
+        // Prepare and Set image for showing or hiding secret number
+        showImage =  new Image(startApplication.getClass().getResourceAsStream("resources/showImage.png"));
+        hideImage = new Image(startApplication.getClass().getResourceAsStream("resources/hideImage.png"));
+        snumberImage.setImage(hideImage);
+
+        // Set behaviour when user click on image (in order to show hide generated secret number)
+        snumberImage.addEventFilter(MouseEvent.MOUSE_PRESSED, e -> {
+            snumberImage.setImage(showImage);
+            tempSecret = snumberField.getText();
+            snumberField.clear();
+            snumberField.setPromptText(tempSecret);
+        });
+        snumberImage.addEventFilter(MouseEvent.MOUSE_RELEASED, e -> {
+            snumberImage.setImage(hideImage);
+            snumberField.setText(tempSecret);
+        });
+
         // Set value for comboBox
         Integer[] number = new Integer[]{0,1,2,3,4,5,6,7,8,9};
         strikeBox.getItems().addAll(number);
@@ -115,6 +143,7 @@ public class gameController implements Initializable {
         testfGuessNumber.add(2);
         testfGuessNumber.add(1);
         testfGuessNumber.add(0);
+
 
     }
 
@@ -607,4 +636,5 @@ public class gameController implements Initializable {
         // Return the guess under string form
         return returnString;
     }
+
 }
